@@ -7,7 +7,7 @@ namespace AddInManager.Model
     /// <summary>
     /// AddinAssemblyModel
     /// </summary>
-    class AddinAssemblyModel
+    public class AddinAssemblyModel
     {
         /// <summary>
         /// 路径

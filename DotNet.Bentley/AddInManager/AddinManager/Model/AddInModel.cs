@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 namespace AddInManager.Model
 {
     [Notifier]
-    class AddInModel : ObservableObject
+    public class AddInModel : ObservableObject
     {
         /// <summary>
         /// 父级
