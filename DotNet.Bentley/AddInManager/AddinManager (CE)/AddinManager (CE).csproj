@@ -38,10 +38,23 @@
       <HintPath>D:\Program Files\Bentley\MicroStation CONNECT Edition\MicroStation\Assemblies\Bentley.MicroStation.Interfaces.1.0.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DotNet.Attribute">
+      <HintPath>..\packs\DotNet.Attribute.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.MVVM">
+      <HintPath>..\packs\DotNet.MVVM\net35\DotNet.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.MVVM.View">
+      <HintPath>..\packs\DotNet.MVVM.View\net35\DotNet.MVVM.View.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\packs\Mono.Cecil\net35\Mono.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,12 +75,15 @@
       <DependentUpon>MainAddinManager.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="CommandTable.xml" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="View\MainAddinManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <Import Project="..\AddinManager\AddinManager.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

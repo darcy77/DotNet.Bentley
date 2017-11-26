@@ -7,7 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinManager (V8i)", "AddIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinManager (CE)", "AddInManager\AddinManager (CE)\AddinManager (CE).csproj", "{55DFEB6B-D5A9-497C-BDBB-068DD6D9B2D5}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AddinManager", "AddInManager\AddinManager\AddinManager.shproj", "{6EF47A74-CB96-438B-8B85-B328FF090A4F}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AddInManager\AddinManager\AddinManager.projitems*{55dfeb6b-d5a9-497c-bdbb-068dd6d9b2d5}*SharedItemsImports = 4
+		AddInManager\AddinManager\AddinManager.projitems*{6ef47a74-cb96-438b-8b85-b328ff090a4f}*SharedItemsImports = 13
+		AddInManager\AddinManager\AddinManager.projitems*{db8c5b39-f590-4607-a874-19251b84e7a3}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -17,7 +17,7 @@ namespace AddinManager.View
     /// <summary>
     /// MainAddinManager.xaml 的交互逻辑
     /// </summary>
-    public partial class MainAddinManager : UserControl
+    public partial class MainAddinManager : Window
     {
         public MainAddinManager()
         {

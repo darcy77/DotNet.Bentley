@@ -30,14 +30,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bentley.General.1.0">
+      <HintPath>D:\Program Files (x86)\Bentley\MicroStation V8i (SELECTseries)\MicroStation\mdlapps\Bentley.General.1.0.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="bentley.microstation.interfaces.1.0">
+      <HintPath>D:\Program Files (x86)\Bentley\MicroStation V8i (SELECTseries)\MicroStation\mdlapps\bentley.microstation.interfaces.1.0.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNet.Attribute">
+      <HintPath>..\packs\DotNet.Attribute.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.MVVM">
+      <HintPath>..\packs\DotNet.MVVM\net35\DotNet.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.MVVM.View">
+      <HintPath>..\packs\DotNet.MVVM.View\net35\DotNet.MVVM.View.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\packs\Mono.Cecil\net35\Mono.Cecil.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packs\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ustation">
+      <HintPath>D:\Program Files (x86)\Bentley\MicroStation V8i (SELECTseries)\MicroStation\mdlapps\ustation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -47,12 +75,15 @@
       <DependentUpon>MainAddinManager.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="CommandTable.xml" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="View\MainAddinManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <Import Project="..\AddinManager\AddinManager.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,18 +5,18 @@ using System.IO;
 namespace Bentley.AddInManager.Model
 {
     /// <summary>
-    /// 
+    /// AddinAssemblyModel
     /// </summary>
     class AddinAssemblyModel
     {
         /// <summary>
-        /// 程序集路径
+        /// 路径
         /// </summary>
 
         public string Path { get; set; }
 
         /// <summary>
-        /// 程序集下类型
+        /// 类型
         /// </summary>
 
         public List<string> Types { get; set; }
@@ -26,6 +26,11 @@ namespace Bentley.AddInManager.Model
             this.Types = new List<string>();
         }
 
+        /// <summary>
+        /// Converters the specified models.
+        /// </summary>
+        /// <param name="models">The models.</param>
+        /// <returns></returns>
         public static List<AddinAssemblyModel> Converter(IEnumerable<AddInModel> models)
         {
             var result = new List<AddinAssemblyModel>();
@@ -53,6 +58,11 @@ namespace Bentley.AddInManager.Model
             return result;
         }
 
+        /// <summary>
+        /// Converters the specified models.
+        /// </summary>
+        /// <param name="models">The models.</param>
+        /// <returns></returns>
         public static ObservableCollection<AddInModel> Converter(IList<AddinAssemblyModel> models)
         {
             var result = new ObservableCollection<AddInModel>();

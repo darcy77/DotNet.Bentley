@@ -47,7 +47,7 @@ namespace AddInManager.Helper
             }
 
             var path = Path.GetDirectoryName(file);
-            var files = Directory.GetFiles(path);
+            var files = Directory.GetFiles(path, "*", SearchOption.AllDirectories);
 
             var newPath = Path.Combine(AddInManagerTempPath, Guid.NewGuid().ToString().Replace("-", ""));
             if (!Directory.Exists(newPath))

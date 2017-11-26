@@ -11,6 +11,7 @@ using System.Reflection;
 using Microsoft.Win32;
 using Mono.Cecil;
 using System.IO;
+using AddinManager.Helper;
 
 namespace AddInManager.ViewModel
 {
@@ -47,14 +48,14 @@ namespace AddInManager.ViewModel
             {
                 return;
             }
+
             try
             {
                 var models = AddinAssemblyModel.Converter(Models);
 
-                var json = DotNet.Json.JsonConvert.SerializeObject(models);
+                var xml = XmlHelper.Serializer(models);
 
-                File.WriteAllText(GlobalHelper.AddInManagerAssemblyFile, json);
-
+                File.WriteAllText(GlobalHelper.AddInManagerAssemblyFile, xml);
             }
             catch (Exception ex)
             {
@@ -71,14 +72,14 @@ namespace AddInManager.ViewModel
                 return;
             }
 
-            var json = File.ReadAllText(GlobalHelper.AddInManagerAssemblyFile);
+            var xml = File.ReadAllText(GlobalHelper.AddInManagerAssemblyFile);
 
-            if (string.IsNullOrEmpty(json))
+            if (string.IsNullOrEmpty(xml))
             {
                 return;
             }
 
-            var models = DotNet.Json.JsonConvert.DeserializeObject<List<AddinAssemblyModel>>(json);
+            var models = XmlHelper.Deserialize<List<AddinAssemblyModel>>(xml);
 
             if (models == null || models.Count == 0)
             {
