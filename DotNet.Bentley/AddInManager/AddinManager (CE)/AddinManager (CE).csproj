@@ -41,6 +41,9 @@
     <Reference Include="DotNet.Attribute">
       <HintPath>..\packs\DotNet.Attribute.dll</HintPath>
     </Reference>
+    <Reference Include="DotNet.Json">
+      <HintPath>..\packs\DotNet.Json.dll</HintPath>
+    </Reference>
     <Reference Include="DotNet.MVVM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packs\DotNet.MVVM\net45\DotNet.MVVM.dll</HintPath>

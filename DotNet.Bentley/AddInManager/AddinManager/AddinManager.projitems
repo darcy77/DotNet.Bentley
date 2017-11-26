@@ -11,7 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Helper\AssemblyResolveHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helper\GlobalHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helper\XmlHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\AddinAssemblyModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\AddInModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AddInViewModel.cs" />
