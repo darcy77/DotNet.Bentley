@@ -1,14 +1,14 @@
-# DotNet.Revit
+# DotNet.Bentley
 
 
-This project is about Revit API related code examples.
+This project is about Bentley API related code examples.
 This project code is all original, in order to provide and study and exchange use.
 If you find the code error, please contact !
 
 
 ## Author
 
-Dedicated to BIM software API development. (Revit 、AutoCAD、Inventor、Navisworks)
+Dedicated to BIM software API development. (Revit 、AutoCAD、Inventor、Bentley)
 
 E-mail : admin@bimapi.com   
 QQ     : 154840459
