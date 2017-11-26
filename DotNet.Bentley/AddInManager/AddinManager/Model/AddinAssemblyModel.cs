@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 
-namespace Bentley.AddInManager.Model
+namespace AddInManager.Model
 {
     /// <summary>
     /// AddinAssemblyModel

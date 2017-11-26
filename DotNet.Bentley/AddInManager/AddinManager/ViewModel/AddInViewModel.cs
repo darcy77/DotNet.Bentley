@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using DotNet.MVVM.Model;
 using DotNet.MVVM;
-using Bentley.AddInManager.Model;
 using System.Collections.ObjectModel;
 using AddInManager.Helper;
 using System.Windows.Input;
@@ -12,6 +11,7 @@ using Microsoft.Win32;
 using Mono.Cecil;
 using System.IO;
 using AddinManager.Helper;
+using AddInManager.Model;
 
 namespace AddInManager.ViewModel
 {

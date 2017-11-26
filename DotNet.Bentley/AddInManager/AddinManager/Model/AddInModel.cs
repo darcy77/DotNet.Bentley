@@ -2,7 +2,7 @@
 using DotNet.MVVM;
 using System.Collections.ObjectModel;
 
-namespace Bentley.AddInManager.Model
+namespace AddInManager.Model
 {
     [Notifier]
     class AddInModel : ObservableObject

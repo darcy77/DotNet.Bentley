@@ -76,7 +76,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CommandTable.xml" />
+     <EmbeddedResource Include="CommandTable.xml">
+      <SubType>Designer</SubType>
+      <LogicalName>CommandTable.xml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\MainAddinManager.xaml">
@@ -86,4 +89,8 @@
   </ItemGroup>
   <Import Project="..\AddinManager\AddinManager.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <UsingTask TaskName="DotNet.MSBuild.NotificationWeaverBuildTask" AssemblyFile="..\MSBuild\DotNet.MSBuild.dll" />
+  <Target Name="AfterBuild">
+    <NotificationWeaverBuildTask TargetPath="$(TargetPath)" DebugMode="True" />
+  </Target>
 </Project>
