@@ -7,8 +7,8 @@
     <ProjectGuid>{967EFF94-55BA-42CB-A87F-D4375CE63C9F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AddinManager__V8i_</RootNamespace>
-    <AssemblyName>AddinManager %28V8i%29</AssemblyName>
+    <RootNamespace>AddinManager</RootNamespace>
+    <AssemblyName>AddinManager</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;V8i;NET35;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
