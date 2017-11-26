@@ -1,17 +1,14 @@
-# DotNet.Bentley
+# Bentley AddinManager
 
 
-This project is about Bentley API related code examples.
+This project is about Bentley Microstation AddinManager debug tools. This tool helps developers quickly debug.
+Do not need to restart the program when modifying the code.
+ 
 This project code is all original, in order to provide and study and exchange use.
 If you find the code error, please contact !
 
 
-## Author
 
-Dedicated to BIM software API development. (Revit 、AutoCAD、Inventor、Bentley)
-
-E-mail : admin@bimapi.com   
-QQ     : 154840459
 
 
 ## License
