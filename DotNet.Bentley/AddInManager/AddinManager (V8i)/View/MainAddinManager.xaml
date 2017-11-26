@@ -7,7 +7,7 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:vp="clr-namespace:DotNet.MVVM.ViewHelper;assembly=DotNet.MVVM"
              mc:Ignorable="d" 
-             Height="320" d:DesignWidth="420" Title="AddIn Manager" >
+             Height="320" Width="420" Title="AddIn Manager" >
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <vp:EventCommandHelper Command="{Binding LoadedEvent}"></vp:EventCommandHelper>
