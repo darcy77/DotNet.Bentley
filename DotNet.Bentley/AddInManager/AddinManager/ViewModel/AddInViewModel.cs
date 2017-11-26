@@ -188,7 +188,7 @@ namespace AddInManager.ViewModel
 
                 if (method == null)
                 {
-                    System.Windows.MessageBox.Show("not found {0} Execute");
+                    System.Windows.MessageBox.Show(string.Format("not found {0} Execute", method.Name));
                     return;
                 }
 
