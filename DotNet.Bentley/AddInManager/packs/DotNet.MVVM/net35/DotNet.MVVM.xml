@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.MVVM</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.MVVM.Model.Messenger">
+            <summary>
+            The Messenger is a class allowing objects to exchange messages.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.Messenger.Default">
+            <summary>
+            单例.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.IExecuteWithObject.Target">
+            <summary>
+            The target of the WeakAction.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IExecuteWithObject.ExecuteWithObject(System.Object)">
+            <summary>
+            Executes an action.
+            </summary>
+            <param name="parameter">A parameter passed as an object,
+            to be casted to the appropriate type.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IExecuteWithObject.MarkForDeletion">
+            <summary>
+            Deletes all references, which notifies the cleanup method
+            that this entry must be deleted.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Register``1(System.Object,System.Action{``0})">
+            <summary>
+            注册一个接收消息者，指定接收的消息类型。
+            </summary>
+            <typeparam name="TMessage">消息类型.</typeparam>
+            <param name="recipient">消息接收者.</param>
+            <param name="action">消息处理委托.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Register``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            注册一个消息接收者，指定接收消息的类型和消息令牌.
+            </summary>
+            <typeparam name="TMessage">消息类型.</typeparam>
+            <param name="recipient">消息接收者.</param>
+            <param name="token">消息令牌.</param>
+            <param name="action">消息处理委托.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Register``1(System.Object,System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            注册一个消息接收者，指定接收消息的类型和消息令牌.
+            </summary>
+            <typeparam name="TMessage">消息类型.</typeparam>
+            <param name="recipient">消息接收者.</param>
+            <param name="token">消息令牌.</param>
+            <param name="receiveDerivedMessagesToo">如果为true，则注册消息类的派生类也会被指定接收消息.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Register``1(System.Object,System.Boolean,System.Action{``0})">
+            <summary>
+            注册一个消息接收者，指定接收的消息类型。
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="recipient">The recipient.</param>
+            <param name="receiveDerivedMessagesToo">if set to <c>true</c> [receive derived messages too].</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Send``1(``0)">
+            <summary>
+            发送一个消息.并指定消息类型.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Send``2(``0)">
+            <summary>
+            发送一个消息，并指定消息接收者的类型.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <typeparam name="TTarget">The type of the target.</typeparam>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Send``1(``0,System.Object)">
+            <summary>
+            发送一个消息，并指定一个令牌.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="message">The message.</param>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister(System.Object)">
+            <summary>
+            取消注册一个指定接收者的所有消息.
+            </summary>
+            <param name="recipient">The recipient.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister(System.String)">
+            <summary>
+            取消注册机遇指定令牌的所有消息.
+            </summary>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister``1(System.Object)">
+            <summary>
+            取消注册一个接收者指定消息类型的消息.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="recipient">The recipient.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister``1(System.Object,System.Object)">
+            <summary>
+            取消注册一个接收者和指定令牌的消息.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="recipient">The recipient.</param>
+            <param name="token">The token.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister``1(System.Object,System.Action{``0})">
+            <summary>
+            Unregisters the specified recipient.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="recipient">The recipient.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.IMessenger.Unregister``1(System.Object,System.Object,System.Action{``0})">
+            <summary>
+            Unregisters the specified recipient.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+            <param name="recipient">The recipient.</param>
+            <param name="token">The token.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="T:DotNet.MVVM.Model.MessageStatus">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.MessageStatus.Complete">
+            <summary>
+            消息发生完成
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.MessageStatus.NoFoundToken">
+            <summary>
+            未找到令牌
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.MessageStatus.NoFoundView">
+            <summary>
+            未找到绑定视图
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.MessageStatus.Exception">
+            <summary>
+            调用异常.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.MessageStatus.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.Model.ObservableObject">
+            <summary>
+            属性通知基类.
+            </summary>
+        </member>
+        <member name="E:DotNet.MVVM.Model.ObservableObject.PropertyChanged">
+            <summary>
+            属性改变后触发事件.
+            </summary>
+        </member>
+        <member name="E:DotNet.MVVM.Model.ObservableObject.PropertyChanging">
+            <summary>
+            属性改变前触发事件.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.ObservableObject.PropertyChangedHandler">
+            <summary>
+            属性改变委托处理.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.ObservableObject.PropertyChangingHandler">
+            <summary>
+            属性改变委托处理.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.ObservableObject.RaisePropertyChanging(System.String)">
+            <summary>
+            属性改变之前回调.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.ObservableObject.RaisePropertyChanged(System.String)">
+            <summary>
+            属性改变之后回调.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+        </member>
+        <member name="T:DotNet.MVVM.Model.RelayCommand">
+            <summary>
+            不带参数通用命令类.
+            </summary>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="T:DotNet.MVVM.Model.RelayCommand`1">
+            <summary>
+            带参数通用命令类.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:System.Windows.Input.ICommand" />
+        </member>
+        <member name="M:DotNet.MVVM.Model.ViewModelBase.Send``1(System.String,System.Object[],System.Predicate{``0})">
+            <summary>
+            发送消息给绑定此ViewModel的视图.并指定View的类型.
+            </summary>
+            <typeparam name="TView"></typeparam>
+            <param name="token">消息令牌，函数名</param>
+            <param name="parameters">参数</param>
+            <param name="predicate">回调，过滤View，如果返回true则发送消息，否则不发送.</param>
+            <remarks>仅发送给指定类型或者指定类型的派生类型.</remarks>
+        </member>
+        <member name="M:DotNet.MVVM.Model.ViewModelBase.Send``1(System.String,System.Object[])">
+            <summary>
+            发送消息给绑定此ViewModel的视图.并指定View的类型.
+            </summary>
+            <typeparam name="TView"></typeparam>
+            <param name="token">消息令牌，函数名</param>
+            <param name="parameters">参数</param>
+            <remarks>仅发送给指定类型或者指定类型的派生类型.</remarks>
+        </member>
+        <member name="M:DotNet.MVVM.Model.ViewModelBase.Send(DotNet.MVVM.Model.WMessage)">
+            <summary>
+            发送常规消息.
+            </summary>
+            <param name="wMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.Method">
+            <summary>
+            Gets or sets the <see cref="T:System.Reflection.MethodInfo" /> corresponding to this WeakAction's
+            method passed in the constructor.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.MethodName">
+            <summary>
+            Gets the name of the method that this WeakAction represents.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.ActionReference">
+            <summary>
+            Gets or sets a WeakReference to this WeakAction's action's target.
+            This is not necessarily the same as
+            <see cref="P:DotNet.MVVM.Model.WeakAction.Reference" />, for example if the
+            method is anonymous.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.Reference">
+            <summary>
+            Gets or sets a WeakReference to the target passed when constructing
+            the WeakAction. This is not necessarily the same as
+            <see cref="P:DotNet.MVVM.Model.WeakAction.ActionReference" />, for example if the
+            method is anonymous.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.IsStatic">
+            <summary>
+            Gets a value indicating whether the WeakAction is static or not.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction.#ctor">
+            <summary>
+            Initializes an empty instance of the <see cref="T:DotNet.MVVM.Model.WeakAction" /> class.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DotNet.MVVM.Model.WeakAction" /> class.
+            </summary>
+            <param name="action">The action that will be associated to this instance.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction.#ctor(System.Object,System.Action)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DotNet.MVVM.Model.WeakAction" /> class.
+            </summary>
+            <param name="target">The action's owner.</param>
+            <param name="action">The action that will be associated to this instance.</param>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.IsAlive">
+            <summary>
+            Gets a value indicating whether the Action's owner is still alive, or if it was collected
+            by the Garbage Collector already.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.Target">
+            <summary>
+            Gets the Action's owner. This object is stored as a 
+            <see cref="T:System.WeakReference" />.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction.ActionTarget">
+            <summary>
+            The target of the weak reference.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction.Execute">
+            <summary>
+            Executes the action. This only happens if the action's owner
+            is still alive.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction.MarkForDeletion">
+            <summary>
+            Sets the reference that this instance stores to null.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.Model.WeakAction`1">
+            <summary>
+            Stores an Action without causing a hard reference
+            to be created to the Action's owner. The owner can be garbage collected at any time.
+            </summary>
+            <typeparam name="T">The type of the Action's parameter.</typeparam>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction`1.MethodName">
+            <summary>
+            Gets the name of the method that this WeakAction represents.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.Model.WeakAction`1.IsAlive">
+            <summary>
+            Gets a value indicating whether the Action's owner is still alive, or if it was collected
+            by the Garbage Collector already.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.#ctor(System.Action{`0})">
+            <summary>
+            Initializes a new instance of the WeakAction class.
+            </summary>
+            <param name="action">The action that will be associated to this instance.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.#ctor(System.Object,System.Action{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:DotNet.MVVM.Model.WeakAction`1"/> class.
+            </summary>
+            <param name="target">The target.</param>
+            <param name="action">The action.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.Execute">
+            <summary>
+            Executes the action. This only happens if the action's owner
+            is still alive.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.Execute(`0)">
+            <summary>
+            Executes the specified parameter.
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.ExecuteWithObject(System.Object)">
+            <summary>
+            Executes an action.
+            </summary>
+            <param name="parameter">A parameter passed as an object,
+            to be casted to the appropriate type.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Model.WeakAction`1.MarkForDeletion">
+            <summary>
+            Sets the reference that this instance stores to null.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.Model.WMessage">
+            <summary>
+            常规View消息.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Close">
+            <summary>
+            关闭Window.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Hide">
+            <summary>
+            隐藏Window
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Show">
+            <summary>
+            显示Window
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Normal">
+            <summary>
+            恢复Window状态
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Minimized">
+            <summary>
+            最小化Window
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.Model.WMessage.Maximized">
+            <summary>
+            最大化Window
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.DependencyObjectExtension.GetParentObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            查找父级控件.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.DependencyObjectExtension.GetChildObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            查找子控件.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.DependencyObjectExtension.GetChildObjects``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            查找所有子控件.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ListExtension.Sort``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            Sort a list of keys, in place using the quick sort algorithm using the quick sort algorithm.
+            </summary>
+            <typeparam name="T">The type of elements in the key list.</typeparam>
+            <param name="keys">List to sort.</param>
+            <param name="comparer">Comparison, defining the sort order.</param>
+        </member>
+        <member name="T:DotNet.MVVM.Extension.ObservableCollectionExtension">
+            <summary>
+            ObservableCollectionExtension
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ObservableCollectionExtension.Sorting``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            排序集合.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="colls">The colls.</param>
+            <param name="comparer">The comparable.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ObservableCollectionExtension.RemoveMatch``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Predicate{``0})">
+            <summary>
+            移除集合内的匹配项.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="colls">The colls.</param>
+            <param name="match">The match.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ReflectionExtension.GetMethodInfo(System.Type,System.String,System.Type[])">
+            <summary>
+            获取方法.
+            </summary>
+            <param name="type">The type.</param>
+            <param name="name">The name.</param>
+            <param name="parameterTypeArray">The parameter type array.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ReflectionExtension.IsDerived(System.Type,System.Type)">
+            <summary>
+            返回指定类型是否为此类型的派生类或与此类型相等.
+            </summary>
+            <param name="type"></param>
+            <param name="derivedType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ReflectionExtension.IsBase(System.Type,System.Type)">
+            <summary>
+            返回指定类型是否为此类型的基类或与此类型相等.
+            </summary>
+            <param name="type"></param>
+            <param name="baseType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.ReflectionExtension.IsMatch(System.Reflection.ParameterInfo[],System.Object[])">
+            <summary>
+            匹配参数类型是否与实际参数值调用匹配.
+            </summary>
+            <param name="paramterInfos"></param>
+            <param name="paramters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.WindowExtension.Show(System.Windows.Window,System.IntPtr)">
+            <summary>
+            非模态显示窗体，并指定此窗体的宿主窗体.
+            </summary>
+            <param name="main">The main.</param>
+            <param name="parent">The parent.</param>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.WindowExtension.ShowDialog(System.Windows.Window,System.IntPtr)">
+            <summary>
+            模态显示窗体，并指定此窗体的宿主窗体.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.Extension.WindowExtension.GetHandle(System.Windows.Window)">
+            <summary>
+            获取WPF窗口句柄.
+            </summary>
+            <param name="main">The main.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotNet.MVVM.ViewHelper.EventCommandHelper">
+            <summary>
+            事件转为命令
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.ViewHelper.PasswordBoxBehavior">
+            <summary>
+            密码框Behavior
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.ViewHelper.PasswordBoxHelper">
+            <summary>
+            密码框MVVM
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.WorkingArea">
+            <summary>  
+            获取屏幕分辨率当前物理大小  
+            </summary>  
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.DpiX">
+            <summary>  
+            当前系统DPI_X 大小 一般为96  
+            </summary>  
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.DpiY">
+            <summary>  
+            当前系统DPI_Y 大小 一般为96  
+            </summary>  
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.DESKTOP">
+            <summary>  
+            获取真实设置的桌面分辨率大小  
+            </summary>  
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.ScaleX">
+            <summary>  
+            获取宽度缩放百分比  
+            </summary>  
+        </member>
+        <member name="P:DotNet.MVVM.ViewHelper.PrimaryScreen.ScaleY">
+            <summary>  
+            获取高度缩放百分比  
+            </summary>  
+        </member>
+        <member name="M:DotNet.Detour.DetourHelper.DetourNET">
+            <summary>
+            基于.net函数进行拦截
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_NOACCESS">
+            <summary>
+            属性页无法访问.
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_READONLY">
+            <summary>
+            属性页只读.
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_READWRITE">
+            <summary>
+            属性页读取或写入
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_WRITECOPY">
+            <summary>
+            属性页写入或拷贝.
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_EXECUTE">
+            <summary>
+            The pag e_ execute
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_EXECUTE_READ">
+            <summary>
+            The pag e_ execut e_ read
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_EXECUTE_READWRITE">
+            <summary>
+            页 读或写.
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_EXECUTE_WRITECOPY">
+            <summary>
+            页 写入或复制
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_GUARD">
+            <summary>
+            The pag e_ guard
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_NOCACHE">
+            <summary>
+            The pag e_ nocache
+            </summary>
+        </member>
+        <member name="F:DotNet.Detour.Protection.PAGE_WRITECOMBINE">
+            <summary>
+            The pag e_ writecombine
+            </summary>
+        </member>
+        <member name="M:DotNet.Detour.DetourNET32Bit.CreateOriginalMethod(System.Reflection.MethodInfo)">
+            <summary>
+            创建原始方法缓存，以便于与目标函数合并.
+            </summary>
+            <param name="method">The method.</param>
+        </member>
+        <member name="T:DotNet.Detour.IDetourNET">
+            <summary>
+            net.
+            </summary>
+        </member>
+        <member name="M:DotNet.Detour.IDetourNET.Patch(System.Reflection.MethodBase,System.Reflection.MethodInfo,System.Reflection.MethodInfo)">
+            <summary>
+            拦截
+            </summary>
+            <param name="target">拦截目标</param>
+            <param name="handler">替代函数</param>
+            <param name="original">原始函数</param>
+        </member>
+        <member name="T:DotNet.Detour.LDasm">
+            <summary>
+            LDasm 算法.
+            </summary>
+        </member>
+        <member name="M:DotNet.Detour.LDasm.SizeofMin5Byte(System.Void*)">
+            <summary>
+            计算大于等于5字节的最少指令的长度
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

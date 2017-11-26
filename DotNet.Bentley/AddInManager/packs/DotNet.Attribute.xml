@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.Attribute</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.MVVM.NotificationMode">
+            <summary>
+            通知模式;
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.NotificationMode.Explicit">
+            <summary>
+            必须使用NotifyAttribute标记
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.NotificationMode.Implicit">
+            <summary>
+            自动检测公共属性.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.NotificationStyle">
+            <summary>
+            通知类型
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.NotificationStyle.OnSet">
+            <summary>
+            每次调用都会进行通知.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.NotificationStyle.OnChange">
+            <summary>
+            当值改变时进行通知.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.NotifierAttribute">
+            <summary>
+            自动通知类.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.NotifierAttribute.NotificationMode">
+            <summary>
+            通知模式.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.NotifierAttribute.DefaultStyle">
+            <summary>
+            通知类型.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.NotifyAttribute">
+            <summary>
+            标记属性通知.
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.NotifyTarget">
+            <summary>
+            通知所触发的函数。
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.SuppressNotifyAttribute">
+            <summary>
+            隐藏属性通知
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+    </members>
+</doc>

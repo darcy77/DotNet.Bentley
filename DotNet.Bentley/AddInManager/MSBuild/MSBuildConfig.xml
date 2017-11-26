@@ -1,0 +1,4 @@
+ <UsingTask TaskName="DotNet.MSBuild.NotificationWeaverBuildTask" AssemblyFile="..\MSBuild\DotNet.MSBuild.dll" />
+  <Target Name="AfterBuild">
+    <NotificationWeaverBuildTask TargetPath="$(TargetPath)" DebugMode="True" />
+  </Target>

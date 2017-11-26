@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.MVVM.View</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.MVVM.View.Converter.EnumConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DotNet.MVVM.View.Zoom.ZoomControl">
+            <summary>
+            缩放控件.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.TranslateXProperty">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.TranslateYProperty">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBackgroundProperty">
+            <summary>
+            缩放框背景颜色.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBorderBrushProperty">
+            <summary>
+            缩放框边框颜色.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBorderThicknessProperty">
+            <summary>
+            缩放框边框厚度.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxOpacityProperty">
+            <summary>
+            缩放框透明度.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxProperty">
+            <summary>
+            缩放框.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomDeltaMultiplierProperty">
+            <summary>
+            缩放倍数.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.ZoomProperty">
+            <summary>
+            缩放.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl.RequireCtrlForZoomProperty">
+            <summary>
+            Ctrl键用于缩放.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl._scaleTransform">
+            <summary>
+            缩放矩阵.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControl._translateTransform">
+            <summary>
+            Applied to the scrollviewer.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.AllowZoom">
+            <summary>
+            当前缩放控件是否允许缩放
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.AllowMove">
+            <summary>
+            当前缩放控件是否允许移动.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBackground">
+            <summary>
+            缩放框背景颜色.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBorderBrush">
+            <summary>
+            缩放框边框颜色.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxBorderThickness">
+            <summary>
+            缩放框边框厚度.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBoxOpacity">
+            <summary>
+            缩放框透明度.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomBox">
+            <summary>
+            缩放框.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.OrigoPosition">
+            <summary>
+            原点位置.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.TranslateX">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.TranslateY">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.AnimationLength">
+            <summary>
+            动画时长.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.MinZoom">
+            <summary>
+            最小缩放.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.MaxZoom">
+            <summary>
+            最大缩放.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.MaxZoomDelta">
+            <summary>
+            最大缩放系数.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ZoomDeltaMultiplier">
+            <summary>
+            缩放焦距
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.HideZoom">
+            <summary>
+            缩放工具条显示状态.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.RequireCtrlForZoom">
+            <summary>
+            是否需要Ctrl键进行缩放.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.Zoom">
+            <summary>
+            缩放
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.ModifierMode">
+            <summary>
+            获取或设置视图修改模式.
+            </summary>
+        </member>
+        <member name="P:DotNet.MVVM.View.Zoom.ZoomControl.Mode">
+            <summary>
+            获取或设置视图模式.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.View.Zoom.ZoomControl.GetCoercedTranslate(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Coerces the translation.
+            </summary>
+            <param name="translate">The desired translate.</param>
+            <param name="zoom">The factor of the zoom.</param>
+            <param name="contentSize">The size of the content inside the zoomed ContentPresenter.</param>
+            <param name="desiredSize">The desired size of the zoomed ContentPresenter.</param>
+            <param name="actualSize">The size of the ZoomControl.</param>
+            <returns>The coerced translation.</returns>
+        </member>
+        <member name="M:DotNet.MVVM.View.Zoom.ZoomControl.ZoomToOriginal">
+            <summary>
+            缩放到原点.
+            </summary>
+        </member>
+        <member name="M:DotNet.MVVM.View.Zoom.ZoomControl.ZoomToFill">
+            <summary>
+            缩放至合适大小以包含所有内容.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControlModes.Fill">
+            <summary>
+            The content should fill the given space.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControlModes.Original">
+            <summary>
+            The content will be represented in its original size.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomControlModes.Custom">
+            <summary>
+            The content will be zoomed with a custom percent.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomViewModifierMode.None">
+            <summary>
+            It does nothing at all.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomViewModifierMode.Pan">
+            <summary>
+            在此模式下，可以使用鼠标平移视图.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomViewModifierMode.ZoomIn">
+            <summary>
+            在此模式下，可以使用鼠标放大视图.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomViewModifierMode.ZoomOut">
+            <summary>
+            在此模式下，可以使用鼠标缩小视图.
+            </summary>
+        </member>
+        <member name="F:DotNet.MVVM.View.Zoom.ZoomViewModifierMode.ZoomBox">
+            <summary>
+            在用户选择缩放框后缩放.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
