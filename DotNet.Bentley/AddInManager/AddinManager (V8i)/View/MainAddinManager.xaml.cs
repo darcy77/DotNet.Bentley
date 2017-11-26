@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AddInManager.ViewModel;
+using DotNet.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,9 @@ namespace AddinManager.View
         public MainAddinManager()
         {
             InitializeComponent();
+
+            this.DataContext = new AddInViewModel();
+            Messenger.Default.Register<AddInViewModel>(this, "Closed.Token", m => this.Close());
         }
     }
 }

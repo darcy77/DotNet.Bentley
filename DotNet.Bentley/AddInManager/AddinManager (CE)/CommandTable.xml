@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<KeyinTree xmlns="http://www.bentley.com/schemas/1.0/MicroStation/AddIn/KeyinTree.xsd">
+  <RootKeyinTable ID="root">
+    <Keyword SubtableRef="props" CommandClass="MacroCommand" CommandWord="AppRun">
+      <Options Required="true"/>
+    </Keyword>
+  </RootKeyinTable>
+    <SubKeyinTables>
+        <KeyinTable ID="props">
+            <Keyword CommandWord="AddIn"/>
+        </KeyinTable>
+    </SubKeyinTables>
+    <KeyinHandlers>
+        <KeyinHandler Keyin="AppRun AddIn"  Function="AddinManager.AppRunKeyins.ShowMain" />
+    </KeyinHandlers>
+</KeyinTree>

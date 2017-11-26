@@ -41,11 +41,9 @@
     <Reference Include="DotNet.Attribute">
       <HintPath>..\packs\DotNet.Attribute.dll</HintPath>
     </Reference>
-    <Reference Include="DotNet.MVVM">
-      <HintPath>..\packs\DotNet.MVVM\net35\DotNet.MVVM.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNet.MVVM.View">
-      <HintPath>..\packs\DotNet.MVVM.View\net35\DotNet.MVVM.View.dll</HintPath>
+    <Reference Include="DotNet.MVVM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packs\DotNet.MVVM\net45\DotNet.MVVM.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>..\packs\Mono.Cecil\net35\Mono.Cecil.dll</HintPath>
@@ -89,7 +87,7 @@
   </ItemGroup>
   <Import Project="..\AddinManager\AddinManager.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <UsingTask TaskName="DotNet.MSBuild.NotificationWeaverBuildTask" AssemblyFile="..\MSBuild\DotNet.MSBuild.dll"/>
+  <UsingTask TaskName="DotNet.MSBuild.NotificationWeaverBuildTask" AssemblyFile="..\MSBuild\DotNet.MSBuild.dll" />
   <Target Name="AfterBuild">
     <NotificationWeaverBuildTask TargetPath="$(TargetPath)" DebugMode="True" />
   </Target>
